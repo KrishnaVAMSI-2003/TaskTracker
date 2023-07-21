@@ -23,6 +23,7 @@ a{
 }
 .nav__header{
     display: flex;
+    align-items: center;
     flex-grow: 1;
 }
 .header__img{
@@ -171,11 +172,7 @@ input::-webkit-datetime-edit-year-field:focus {
 }
 .add__icon{
     -webkit-tap-highlight-color: transparent;
-    background: rgb(238, 232, 232);
-    border-radius: 50%;
-    border-top:1px solid rgb(234, 232, 232);
-    border-right:1px solid rgb(169, 169, 169);
-    color:#0223a9;
+    color:inherit;
     cursor: pointer;
     font-size:30px;
     margin:0;
