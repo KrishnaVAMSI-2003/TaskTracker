@@ -1,3 +1,6 @@
+html{
+  font-size: 62.5%;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +13,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app{
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background: #e2e2cf;
+}
+.dark-app{
+  background: rgb(22, 22, 22);
+}
+.container{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }

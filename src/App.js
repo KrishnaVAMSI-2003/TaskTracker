@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Input from "./components/Input";
+import List from "./components/List";
+import Navbar from "./components/Navbar";
+import './index.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default function App() {
+  const handleClick = () =>{
+    const navbar = document.querySelector('.navbar')
+    const icon = document.querySelector('.nav__icon>i')
+    navbar.classList.remove("nav--expanded")
+    icon.classList.remove('fa-x')
+  }
+  return(
+    <div className="app">
+      <Navbar/>
+      <div className="container"  onClick={handleClick}>
+        <Input/>
+        <List/>
+      </div>
     </div>
-  );
+  )
 }
-
-export default App;
