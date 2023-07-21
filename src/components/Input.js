@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useRef } from 'react';
-import {add} from '../Redux/actions'
+import {add,timeline,completeToFalse} from '../Redux/actions'
 import './style.css'
 
 export default function Input() {
@@ -27,10 +27,17 @@ export default function Input() {
             alert("task cannot be empty") 
             return
         }
-        if((new Date(new Date(inpDate).toDateString())- new Date(new Date().toDateString()))<0){
+        const dateDiff = new Date(new Date(inpDate).toDateString())- new Date(new Date().toDateString())
+        if(dateDiff<0){
             alert("Invalid Date. Date should not be less than today")
             return
         }
+        if(dateDiff>0){
+            dispatch(timeline('UPCOMING'))
+        } else{
+            dispatch(timeline('TODAY'))
+        }
+        dispatch(completeToFalse())
         const indexArr = data.map(ele=>ele.index)
         const taskIndex = indexArr.length>0 ? Math.max(...indexArr) + 1 : 1
 
